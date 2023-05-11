@@ -20,11 +20,19 @@ public class Game {
 	
 	@Column(name = "game_year")
 	private Integer year;
-	private String gerre;
+	private String genre;
 	private String platforms;
 	private Double score;
 	private String imgUrl;
+	
+	@Column(columnDefinition = "TEXT")
 	private String shortDescription;
+	
+	/* Anotation é para indicar que esse campo seja 
+	*  no formato texto e não no formato "varcha" no
+	*  la no banco de dados
+	*/
+	@Column(columnDefinition = "TEXT")
 	private String longDescription;
 
 	public Game() {
@@ -36,7 +44,7 @@ public class Game {
 		this.id = id;
 		this.title = title;
 		this.year = year;
-		this.gerre = gerre;
+		this.genre = gerre;
 		this.platforms = platforms;
 		this.score = score;
 		this.imgUrl = imgUrl;
@@ -69,11 +77,11 @@ public class Game {
 	}
 
 	public String getGerre() {
-		return gerre;
+		return genre;
 	}
 
-	public void setGerre(String gerre) {
-		this.gerre = gerre;
+	public void setGerre(String genre) {
+		this.genre = genre;
 	}
 
 	public String getPlatforms() {
